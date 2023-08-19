@@ -1,13 +1,16 @@
 // AuthContext.js
 import React, { createContext, useContext, useState } from 'react';
+import { auth } from '../firebase';
+import { signInWithEmailAndPassword } from "firebase/auth";
 
 const AuthContext = createContext();
 
 export function AuthProvider({ children }) {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  const login = () => {
+  const login = (email, password) => {
     // Implement login logic
+    signInWithEmailAndPassword(auth, email, password).then(console.log("Signed in"));
     setIsAuthenticated(true);
   };
 
