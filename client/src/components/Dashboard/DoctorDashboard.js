@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PatientList from './PatientList';
 
 function DoctorDashboard() {
   return (
@@ -10,7 +11,10 @@ function DoctorDashboard() {
         <Link to="/doctor/patient-list" className="btn btn-primary">Patient List</Link>
         <Link to="/doctor/readings" className="btn btn-primary">Patient Readings</Link>
       </div>
+      <PatientList />
     </div>
+
+    
   );
 }
 
